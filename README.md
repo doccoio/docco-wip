@@ -179,7 +179,7 @@ MIT © [Docco](https://github.com/doccoio)
 ## Contact 👻
 
 - 🇵🇹 jcunhafonte@gmail.com
-- 🇦🇷 lucas.hartridge@gmail.com
+- 🇦🇷 lnhartridge@gmail.com
 - 🌍 doccoioofficial@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

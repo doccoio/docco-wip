@@ -33,7 +33,7 @@ When in doubt, keep your Pull Requests small. To give a Pull Request the best ch
 ### Before submitting a pull request, please make sure the following is done:
 
 1. Fork the [repository](https://github.com/doccoio/docco-wip) and create your branch from main.
-2. Install dependencies with yarn install. Make sure you are using at least node 16 for local development
+2. Install dependencies with yarn install. Make sure you are using at least node 14.18 for local development
 3. If you’ve fixed a bug or added code that should be tested, add tests!
 4. Ensure the test suite passes (yarn test). Tip: yarn test --watch TestName is helpful in development.
 5. Run yarn test --prod to test in the production environment.

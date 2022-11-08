@@ -49,7 +49,9 @@
     "storybook": "sb dev",
     "storybook:build": "sb build",
     "prepare": "husky install",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:cypress:open": "npx cypress open",
+    "test:cypress:headless": "npx cypress run --headless --browser chrome && npx cypress run --headless --browser electron"
   },
   "engines": {
     "node": ">=12"
@@ -86,6 +88,7 @@
     "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^9.1.0",
     "cross-env": "^7.0.3",
+    "cypress": "^10.11.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
