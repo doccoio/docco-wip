@@ -7,3 +7,6 @@ src/stories
 **/*.test.tsx
 **/*.spec.tsx
 node_modules
+rollup.config.js
+babel.config.js
+jest.config.js
