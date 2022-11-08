@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import Title from 'components/title';
 import styles from './styles.module.css';
 
 export interface Props {
@@ -8,16 +9,13 @@ export interface Props {
 }
 
 export function Docco(props: Props) {
-  useEffect(() => {
-    console.log('Incoming url: ', props.url);
-  }, [props.url]);
-
   return (
-    <div className={props.theme == 'light' ? styles.container : styles.dark}>
+    <div className={props.theme == "light" ? styles.container : styles.dark}>
       <h3>URL: {props.url}</h3>
       <h6>NAME: {props.theme ?? props.theme}</h6>
+      <Title title="Docco rocks" />
     </div>
-  );
+  )
 }
 
 export function init(url: string, element: HTMLElement) {

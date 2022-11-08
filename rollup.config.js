@@ -2,10 +2,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
-import external from 'rollup-plugin-peer-deps-external';
+import typescript from '@rollup/plugin-typescript';
+import externals from 'rollup-plugin-node-externals';
+import replace from 'rollup-plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 import sourceMaps from 'rollup-plugin-sourcemaps';
-import typescript from 'rollup-plugin-typescript2';
 import filesize from 'rollup-plugin-filesize';
 import license from 'rollup-plugin-license';
 import { createRequire } from 'module';
@@ -26,16 +27,18 @@ const globals = {
   'react-dom': 'ReactDOM',
 };
 const plugins = [
-  external(),
+  externals(),
   postcss({
     modules: true,
   }),
-  json(),
-  typescript({
-    useTsconfigDeclarationDir: true,
-    exclude: ['**/__tests__/**', '*.spec.*', '*.test.*'],
-    clean: true,
+  replace({
+    preventAssignment: true,
+    'process.env.NODE_ENV': JSON.stringify(
+      process.env.NODE_ENV || 'development'
+    ),
   }),
+  json(),
+  typescript({ tsconfig: './tsconfig.json' }),
   resolve(),
   commonjs(),
   sourceMaps(),
@@ -53,15 +56,15 @@ export default {
       file: pkg.main,
       format: 'cjs',
       sourcemap: true,
-      plugins: [terser()],
       exports: 'auto',
+      plugins: [terser()],
     },
     {
       file: pkg.module,
       format: 'esm',
       sourcemap: true,
-      plugins: [terser()],
       exports: 'auto',
+      plugins: [terser()],
     },
     {
       file: pkg.browser,
@@ -69,10 +72,11 @@ export default {
       sourcemap: true,
       exports: 'auto',
       name: 'Docco',
-      globals,
+      plugins: [terser()],
+      // globals,
     },
     {
-      file: 'dist/index.js',
+      file: 'dist/docco.js',
       format: 'cjs',
       sourcemap: true,
       exports: 'auto',
@@ -81,5 +85,6 @@ export default {
   watch: {
     include: 'src/**',
   },
+  // globals,
   plugins,
 };
