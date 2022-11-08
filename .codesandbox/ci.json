@@ -1,7 +1,4 @@
 {
   "node": "16",
-  "sandboxes": ["/examples/react"],
-  "publishDirectory": {
-    "@docco/docco-wip": "dist"
-  }
+  "sandboxes": ["/examples/react"]
 }
