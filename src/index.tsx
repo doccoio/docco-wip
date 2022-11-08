@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Title from 'components/title'
 import styles from './styles.module.css'
@@ -8,11 +8,11 @@ export interface Props {
   theme?: 'light' | 'dark'
 }
 
-export function Docco(props: Props) {
+export function Docco({ url, theme = 'light' }: Props) {
   return (
-    <div className={(props.theme = 'light' ? styles.container : styles.dark)}>
-      <h3>URL: {props.url}</h3>
-      <h6>NAME: {props.theme ?? props.theme}</h6>
+    <div className={theme === 'light' ? styles.container : styles.dark}>
+      <h3>URL: {url}</h3>
+      <h6>NAME: {theme}</h6>
       <Title title='Docco rocks' />
     </div>
   )

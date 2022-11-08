@@ -1,17 +1,18 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Main from '../index';
+import { Docco } from "../index"
 
 describe('My Component', () => {
-  it('displays the passed message', async () => {
-    const { findByText } = render(<Main message="Hello World" />);
-    const content = await findByText('Hello World');
+  it('displays the url', async () => {
+    render(<Docco url="https://api.docco.io/openapi.json" />);
+    const content = screen.findByText('https://api.docco.io/openapi.json');
     expect(content).toBeTruthy();
   });
-  it('displays the default message', async () => {
-    const { findByText } = render(<Main />);
-    const content = await findByText('No Message');
+
+  it('displays the default theme', async () => {
+    render(<Docco url="https://api.docco.io/openapi.json" />);
+    const content = screen.findByText("light");
     expect(content).toBeTruthy();
   });
 });

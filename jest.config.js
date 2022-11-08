@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['example', 'demo', 'node_modules'],
@@ -7,4 +7,5 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(scss|sass|css)$': 'identity-obj-proxy',
   },
-};
+  modulePaths: ['<rootDir>/src'],
+}
