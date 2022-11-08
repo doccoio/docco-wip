@@ -41,8 +41,9 @@
     "reinstall": "yarn clean && yarn install",
     "docs": "typedoc",
     "coverage": "codecov -e TRAVIS_NODE_VERSION -f coverage/*.json",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --coverage --watch",
@@ -130,8 +131,8 @@
   "dependencies": {},
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "./node_modules/.bin/prettier --write",
-      "./node_modules/.bin/eslint"
+      "npm run lint:fix",
+      "npm run format"
     ]
   }
 }

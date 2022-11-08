@@ -1,0 +1,6 @@
+dist
+src/__tests__
+src/stories
+**/*.test.tsx
+**/*.spec.tsx
+node_modules
