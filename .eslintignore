@@ -1,4 +1,7 @@
 dist
+docs
+examples
+demo
 src/__tests__
 src/stories
 **/*.test.tsx

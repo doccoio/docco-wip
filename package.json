@@ -41,7 +41,7 @@
     "reinstall": "yarn clean && yarn install",
     "docs": "typedoc",
     "coverage": "codecov -e TRAVIS_NODE_VERSION -f coverage/*.json",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint": "eslint .",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "test": "jest",
