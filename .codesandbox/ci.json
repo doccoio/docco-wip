@@ -1,4 +1,4 @@
 {
   "node": "16",
-  "sandboxes": ["/examples/vue"]
+  "sandboxes": ["/examples/react"]
 }
