@@ -8,24 +8,24 @@ on:
       - feature/interaction-test
 
 jobs:
-  run-lint:
-    name: Check Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-      - uses: ./.github/actions/lint
-  run-unit-tests:
-    name: Run Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-      - uses: ./.github/actions/unit-test
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-      - uses: ./.github/actions/build
+  # run-lint:
+  #   name: Check Lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+  #     - uses: ./.github/actions/lint
+  # run-unit-tests:
+  #   name: Run Unit Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+  #     - uses: ./.github/actions/unit-test
+  # build:
+  #   name: Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+  #     - uses: ./.github/actions/build
   run-interaction-test:
     name: Run Interaction Test
     runs-on: ubuntu-latest

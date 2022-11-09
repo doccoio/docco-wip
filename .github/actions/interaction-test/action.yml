@@ -12,6 +12,4 @@ runs:
     - shell: bash
       run: |
         yarn install
-        yarn storybook:build
-        yarn storybook
-        yarn storybook:test
+        yarn storybook:test:ci

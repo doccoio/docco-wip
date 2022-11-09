@@ -55,6 +55,7 @@
     "storybook:build": "sb build",
     "storybook:test": "test-storybook",
     "storybook:test:cross-browser": "yarn storybook:test --browsers chromium firefox webkit",
+    "storybook:test:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
     "prepare": "husky install",
     "build-storybook": "storybook build",
     "release": "release-it"
