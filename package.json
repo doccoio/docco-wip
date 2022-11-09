@@ -1,7 +1,7 @@
 {
-  "name": "docco-wip",
+  "name": "@docco/docco-wip",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Write code, not docs",
   "author": "Docco Team <docco@docco.io>",
   "license": "MIT",
@@ -12,7 +12,6 @@
   "bugs": {
     "url": "https://github.com/doccoio/docco-wip/issues"
   },
-  "private": false,
   "homepage": "https:/docco.io/",
   "keywords": [
     "docco",
@@ -30,6 +29,7 @@
   "files": [
     "dist"
   ],
+  "private": false,
   "publishConfig": {
     "access": "public"
   },
@@ -54,7 +54,7 @@
     "storybook:build": "sb build",
     "prepare": "husky install",
     "build-storybook": "storybook build",
-    "release": "release-it"
+    "release": "release-it --npm.skipChecks"
   },
   "engines": {
     "node": ">=12"
@@ -141,7 +141,7 @@
       "release": true
     },
     "npm": {
-      "publish": false
+      "publish": true
     },
     "plugins": {
       "@release-it/conventional-changelog": {
