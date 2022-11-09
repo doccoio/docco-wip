@@ -14,7 +14,11 @@ function Title({ title }: Props) {
 
   return (
     <div>
-      <input onChange={(e) => setTitle(e.target.value)} value={internalTitle} />
+      <input
+        data-testid='input-card-title'
+        onChange={(e) => setTitle(e.target.value)}
+        value={internalTitle}
+      />
       <h2>{internalTitle}</h2>
       <p>This is a lorem ipsum description...</p>
       <Card title={internalTitle} />

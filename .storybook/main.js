@@ -7,5 +7,8 @@ module.exports = {
   },
   docsPage: {
     docs: "automatic"
+  },
+  features: {
+    interactionsDebugger: true,
   }
 };
