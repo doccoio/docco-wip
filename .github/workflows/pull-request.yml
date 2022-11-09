@@ -7,6 +7,7 @@ on:
     branches:
       - feature/interaction-test
 
+
 jobs:
   commitlint:
     name: Commit lint
