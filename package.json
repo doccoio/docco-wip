@@ -55,7 +55,7 @@
     "storybook:build": "sb build",
     "storybook:test": "test-storybook",
     "storybook:test:cross-browser": "yarn storybook:test --browsers chromium firefox webkit",
-    "storybook:test:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
+    "storybook:test:ci": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
     "prepare": "husky install",
     "build-storybook": "storybook build",
     "release": "release-it"
@@ -101,6 +101,7 @@
     "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^9.1.0",
     "commitizen": "^4.2.5",
+    "concurrently": "^7.5.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
