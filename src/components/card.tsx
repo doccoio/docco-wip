@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export interface Props {
-  title: string
+  title: string;
 }
 
 function Card(props: Props) {
@@ -10,7 +10,7 @@ function Card(props: Props) {
       <h1>{props.title}</h1>
       <p>bla bla bla bla</p>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

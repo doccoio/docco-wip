@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import Card from './card'
+import React, { useEffect, useState } from 'react';
+import Card from './card';
 
 export interface Props {
-  title: string
+  title: string;
 }
 
 function Title({ title }: Props) {
-  const [internalTitle, setTitle] = useState(title)
+  const [internalTitle, setTitle] = useState(title);
 
   useEffect(() => {
-    console.log('Incoming title: ', title)
-  }, [title])
+    console.log('Incoming title: ', title);
+  }, [title]);
 
   return (
     <div>
@@ -19,7 +19,7 @@ function Title({ title }: Props) {
       <p>This is a lorem ipsum description...</p>
       <Card title={internalTitle} />
     </div>
-  )
+  );
 }
 
-export default Title
+export default Title;
