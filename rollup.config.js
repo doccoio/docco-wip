@@ -76,7 +76,7 @@ export default {
       // globals,
     },
     {
-      file: 'dist/docco.js',
+      file: 'dist/index.js',
       format: 'cjs',
       sourcemap: true,
       exports: 'auto',
@@ -87,4 +87,4 @@ export default {
   },
   // globals,
   plugins,
-};
+}
