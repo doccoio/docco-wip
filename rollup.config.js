@@ -4,7 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import externals from 'rollup-plugin-node-externals';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 import postcss from 'rollup-plugin-postcss';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import filesize from 'rollup-plugin-filesize';
@@ -33,9 +33,7 @@ const plugins = [
   }),
   replace({
     preventAssignment: true,
-    'process.env.NODE_ENV': JSON.stringify(
-      process.env.NODE_ENV || 'development'
-    ),
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
   }),
   json(),
   typescript({ tsconfig: './tsconfig.json' }),
@@ -76,7 +74,7 @@ export default {
       // globals,
     },
     {
-      file: 'dist/docco.js',
+      file: 'dist/index.js',
       format: 'cjs',
       sourcemap: true,
       exports: 'auto',

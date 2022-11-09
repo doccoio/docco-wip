@@ -23,10 +23,10 @@
     "react",
     "react-component"
   ],
-  "main": "dist/docco.min.js",
-  "module": "dist/docco.esm.js",
-  "browser": "dist/docco.umd.min.js",
-  "types": "dist/docco.d.ts",
+  "main": "dist/index.min.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.min.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -94,6 +94,7 @@
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^9.1.0",
+    "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
@@ -120,6 +121,8 @@
     "rollup-plugin-license": "^3.0.1",
     "rollup-plugin-node-externals": "^5.0.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
     "sass-loader": "^13.1.0",
@@ -170,8 +173,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "npm run lint:fix",
-      "npm run format"
+      "yarn lint:fix",
+      "yarn format"
     ]
   }
 }

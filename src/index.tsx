@@ -13,7 +13,7 @@ export function Docco(props: Props) {
     <div className={props.theme === 'light' ? styles.container : styles.dark}>
       <h3>URL: {props.url}</h3>
       <h6>NAME: {props.theme ?? props.theme}</h6>
-      <Title title='Docco rocks' />
+      <Title title='Docco rocks test' />
     </div>
   );
 }
