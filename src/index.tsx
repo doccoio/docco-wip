@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Title from 'components/title'
-import styles from './styles.module.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Title from 'components/title';
+import styles from './styles.module.css';
 
 export interface Props {
   url: string;
