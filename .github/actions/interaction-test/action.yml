@@ -11,5 +11,6 @@ runs:
         cache: 'yarn'
     - shell: bash
       run: |
+        npx playwright install-deps
         yarn install
         yarn storybook:test:ci
