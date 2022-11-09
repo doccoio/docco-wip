@@ -1,7 +1,7 @@
 {
-  "name": "docco-wip",
+  "name": "@docco/docco-wip",
   "type": "module",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Write code, not docs",
   "author": "Docco Team <docco@docco.io>",
   "license": "MIT",
@@ -12,7 +12,6 @@
   "bugs": {
     "url": "https://github.com/doccoio/docco-wip/issues"
   },
-  "private": false,
   "homepage": "https:/docco.io/",
   "keywords": [
     "docco",
@@ -23,26 +22,29 @@
     "react",
     "react-component"
   ],
-  "main": "dist/docco.min.js",
-  "module": "dist/docco.esm.js",
-  "browser": "dist/docco.umd.min.js",
-  "types": "dist/docco.d.ts",
+  "main": "dist/index.min.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.min.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "scripts": {
     "start": "yarn storybook",
     "watch": "rollup --config --watch",
     "build": "yarn clean && tsc && rollup --config && yarn docs",
     "clean": "rimraf dist && rimraf docs",
+    "commit": "git-cz",
     "reinstall": "yarn clean && yarn install",
     "docs": "typedoc",
     "coverage": "codecov -e TRAVIS_NODE_VERSION -f coverage/*.json",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -52,7 +54,8 @@
     "storybook": "sb dev",
     "storybook:build": "sb build",
     "prepare": "husky install",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release": "release-it"
   },
   "engines": {
     "node": ">=12"
@@ -68,9 +71,12 @@
     "@babel/preset-typescript": "^7.18.6",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@commitlint/cz-commitlint": "^17.2.0",
+    "@release-it/conventional-changelog": "^5.1.1",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-json": "^5.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.1",
     "@rollup/plugin-terser": "^0.1.0",
     "@rollup/plugin-typescript": "^9.0.2",
     "@storybook/addon-actions": "^7.0.0-alpha.48",
@@ -86,20 +92,19 @@
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
     "@typescript-eslint/parser": "^5.42.0",
     "babel-loader": "^9.1.0",
+    "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.5.0",
+    "eslint-plugin-package-json": "^0.1.4",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-storybook": "^0.6.7",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
@@ -110,6 +115,7 @@
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "release-it": "^15.5.0",
     "rimraf": "^3.0.2",
     "rollup": "^3.2.5",
     "rollup-plugin-filesize": "^9.1.2",
@@ -117,7 +123,6 @@
     "rollup-plugin-node-externals": "^5.0.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
@@ -129,10 +134,15 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {},
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
-      "npm run lint:fix",
-      "npm run format"
+      "yarn lint:fix",
+      "yarn format"
     ]
   }
 }

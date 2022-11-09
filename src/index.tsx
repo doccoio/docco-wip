@@ -4,8 +4,8 @@ import Title from 'components/title'
 import styles from './styles.module.css'
 
 export interface Props {
-  url: string
-  theme?: 'light' | 'dark'
+  url: string;
+  theme?: 'light' | 'dark';
 }
 
 export function Docco({ url, theme = 'light' }: Props) {
@@ -15,10 +15,10 @@ export function Docco({ url, theme = 'light' }: Props) {
       <h6>NAME: {theme}</h6>
       <Title title='Docco rocks' />
     </div>
-  )
+  );
 }
 
 export function init(url: string, element: HTMLElement) {
-  const root = ReactDOM.createRoot(element)
-  root.render(Docco({ url }))
+  const root = ReactDOM.createRoot(element);
+  root.render(Docco({ url }));
 }

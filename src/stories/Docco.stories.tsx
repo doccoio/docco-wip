@@ -12,6 +12,6 @@ const Template: StoryFn<typeof Docco> = (args) => <Docco {...args} />;
 
 export const OpenAPI = Template.bind({});
 OpenAPI.args = {
-  url: 'my fancy docs',
+  url: 'my fancy docs url',
   theme: 'light',
 };
