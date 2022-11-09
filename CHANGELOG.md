@@ -1,5 +1,14 @@
 
 
+## [1.0.1](https://github.com/doccoio/docco-wip/compare/1.0.0...1.0.1) (2022-11-09)
+
+
+### Bug Fixes
+
+* my shit ([8618b8d](https://github.com/doccoio/docco-wip/commit/8618b8d4283e93396af9fbdf6f32585dbd91e5f8))
+* my shit ([94c52d9](https://github.com/doccoio/docco-wip/commit/94c52d9160d8f3c045ab0adccc8c7a445527301b))
+* my shit ([0488a7f](https://github.com/doccoio/docco-wip/commit/0488a7f8a8375daf0bed5d837e6aa7743c191041))
+
 ## 1.0.0 (2022-11-09)
 
 
