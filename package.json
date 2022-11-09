@@ -54,7 +54,7 @@
     "storybook:build": "sb build",
     "prepare": "husky install",
     "build-storybook": "storybook build",
-    "release": "release-it --npm.skipChecks"
+    "release": "release-it"
   },
   "engines": {
     "node": ">=12"
@@ -133,39 +133,6 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {},
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "publish": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "infile": "CHANGELOG.md",
-        "preset": {
-          "name": "conventionalcommits",
-          "types": [
-            {
-              "type": "feat",
-              "section": "Features"
-            },
-            {
-              "type": "fix",
-              "section": "Bug Fixes"
-            },
-            {
-              "type": "docs",
-              "section": "Documentation"
-            }
-          ]
-        }
-      }
-    }
-  },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
