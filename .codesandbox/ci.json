@@ -1,4 +1,4 @@
 {
   "node": "16",
-  "sandboxes": ["/examples/react"]
+  "sandboxes": ["/examples/vanilla", "/examples/react", "/examples/vue", "/examples/angular"]
 }
