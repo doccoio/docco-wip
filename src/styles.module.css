@@ -8,6 +8,6 @@
 .dark {
   display: flex;
   flex-direction: column;
-  background: red;
+  background: blue;
   font-size: 30px;
 }
