@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import * as Remount from 'remount';
+
 import Title from './components/title';
 import styles from './styles.module.css';
 
@@ -22,3 +24,5 @@ export function init(url: string, element: HTMLElement) {
   const root = ReactDOM.createRoot(element);
   root.render(Docco({ url }));
 }
+
+Remount.define({ 'x-docco': Docco }, { attributes: ['url', 'theme'] });
