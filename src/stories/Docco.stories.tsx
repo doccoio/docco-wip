@@ -23,7 +23,9 @@ WC.args = {
 };
 
 declare global {
+  // eslint-disable-next-line no-unused-vars
   namespace JSX {
+    // eslint-disable-next-line no-unused-vars
     interface IntrinsicElements {
       'x-docco': Props;
     }
