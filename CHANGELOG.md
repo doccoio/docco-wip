@@ -1,5 +1,7 @@
 
 
+## [1.1.1](https://github.com/doccoio/docco-wip/compare/1.1.0...1.1.1) (2022-11-10)
+
 ## [1.1.0](https://github.com/doccoio/docco-wip/compare/1.0.1...1.1.0) (2022-11-10)
 
 
