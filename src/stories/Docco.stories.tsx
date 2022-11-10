@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 
-import { Docco } from '../';
+import { Docco, Props } from '../';
 
 export default {
   title: 'Docco',
@@ -21,3 +21,11 @@ WC.args = {
   url: 'my fancy docs url',
   theme: 'light',
 };
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'x-docco': Props;
+    }
+  }
+}
