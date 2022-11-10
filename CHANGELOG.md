@@ -1,5 +1,28 @@
 
 
+## [1.1.0](https://github.com/doccoio/docco-wip/compare/1.0.1...1.1.0) (2022-11-10)
+
+
+### Features
+
+* add wc ([eb3cd67](https://github.com/doccoio/docco-wip/commit/eb3cd670a05bad03a790d4259d33fe8e44ab2f8f))
+* fix lint ([7690ad1](https://github.com/doccoio/docco-wip/commit/7690ad1ed0c7cece88f90b0078ca78ca4af0a480))
+* something new ([6ebb73e](https://github.com/doccoio/docco-wip/commit/6ebb73ebccd38300dfee746574f914d2dc247eed))
+* something new ([9498369](https://github.com/doccoio/docco-wip/commit/9498369077b0e290824222f4bed4a2ff766e91c2))
+* unit tests ([2168933](https://github.com/doccoio/docco-wip/commit/2168933e4ad0f6594fa294133288a9714b8cbd5a))
+
+
+### Bug Fixes
+
+* examples ([fc0d681](https://github.com/doccoio/docco-wip/commit/fc0d681bd4058de0fef9a0ea2d98de6d4754e941))
+* test ([1f0315c](https://github.com/doccoio/docco-wip/commit/1f0315cc3b5f37128586c387157d9ba0f6cbd520))
+
+
+### Documentation
+
+* light ([f363929](https://github.com/doccoio/docco-wip/commit/f3639297c14e0de8f0de7e6eb75f4b7b6aff9aec))
+* will work? ([f018361](https://github.com/doccoio/docco-wip/commit/f018361779b54fd5636737ba63fd267add6a81a2))
+
 ## [1.0.1](https://github.com/doccoio/docco-wip/compare/1.0.0...1.0.1) (2022-11-09)
 
 

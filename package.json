@@ -1,7 +1,7 @@
 {
   "name": "@docco/docco-wip",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Write code, not docs",
   "author": "Docco Team <docco@docco.io>",
   "license": "MIT",
