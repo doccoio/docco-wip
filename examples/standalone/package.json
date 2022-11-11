@@ -1,5 +1,5 @@
 {
-  "name": "@docco/docco-wip-wc",
+  "name": "@docco/docco-wip-standalone",
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
