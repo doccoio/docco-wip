@@ -22,10 +22,11 @@
     "react",
     "react-component"
   ],
-  "main": "dist/index.min.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.min.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/docco.min.js",
+  "module": "dist/docco.esm.js",
+  "browser": "dist/docco.umd.min.js",
+  "standalone": "dist/docco.standalone.min.js",
+  "types": "dist/docco.d.ts",
   "files": [
     "dist"
   ],

@@ -9,12 +9,12 @@ import postcss from 'rollup-plugin-postcss';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import filesize from 'rollup-plugin-filesize';
 import license from 'rollup-plugin-license';
-
 import { createRequire } from 'module';
+
 const require = createRequire(import.meta.url);
 const pkg = require('./package.json');
-
 const input = './src/index.tsx';
+const sourcemap = false;
 const banner = `
 /** @license Docco ${pkg.version}
  *
@@ -28,10 +28,7 @@ const globals = {
   'react-dom/client': 'ReactDOM',
 };
 const plugins = [
-  externals(),
-  postcss({
-    modules: true,
-  }),
+  postcss(),
   replace({
     preventAssignment: true,
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -57,35 +54,46 @@ export default [
       {
         file: pkg.main,
         format: 'cjs',
-        sourcemap: true,
+        sourcemap,
         exports: 'auto',
         plugins: [terser()],
       },
       {
         file: pkg.module,
         format: 'esm',
-        sourcemap: true,
+        sourcemap,
         exports: 'auto',
         plugins: [terser()],
       },
       {
         file: pkg.browser,
         format: 'umd',
-        sourcemap: true,
+        sourcemap,
         exports: 'auto',
         name: 'Docco',
         plugins: [terser()],
         globals,
       },
       {
-        file: 'dist/index.js',
+        file: 'dist/docco.js',
         format: 'cjs',
-        sourcemap: true,
+        sourcemap,
         exports: 'auto',
       },
     ],
     watch: {
       include: 'src/**',
+    },
+    plugins: [externals({ exclude: 'remount' }), ...plugins],
+  },
+  {
+    input,
+    output: {
+      file: pkg.standalone,
+      format: 'umd',
+      sourcemap,
+      name: 'Docco',
+      plugins: [terser()],
     },
     plugins,
   },
