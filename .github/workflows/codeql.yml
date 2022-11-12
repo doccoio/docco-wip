@@ -9,7 +9,7 @@ on:
     - cron: '0 1 * * 0'
 
 jobs:
-  CodeQL-Build:
+  analyze:
     runs-on: ubuntu-latest
 
     permissions:
