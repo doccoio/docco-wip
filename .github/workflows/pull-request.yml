@@ -9,24 +9,25 @@ jobs:
     name: Commit lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v5
-        with:
-          configFile: ./commitlint.config.cjs
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: ./.github/actions/lint-commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
   run-lint:
     name: Check Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: ./.github/actions/lint
+      
   run-unit-test:
     name: Run Unit Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: ./.github/actions/unit-test
+      
   build:
     name: Build
     needs: [run-commit-lint, run-lint, run-unit-test]
@@ -34,6 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: ./.github/actions/build
+      
   run-interaction-test:
     name: Run Interaction Test
     needs: [build]

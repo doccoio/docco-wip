@@ -1,7 +1,7 @@
 {
   "name": "@docco/docco-wip",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Write code, not docs",
   "author": "Docco Team <docco@docco.io>",
   "license": "MIT",
@@ -22,10 +22,11 @@
     "react",
     "react-component"
   ],
-  "main": "dist/index.min.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.min.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/docco.min.js",
+  "module": "dist/docco.esm.js",
+  "browser": "dist/docco.umd.min.js",
+  "standalone": "dist/docco.standalone.min.js",
+  "types": "dist/docco.d.ts",
   "files": [
     "dist"
   ],
@@ -46,15 +47,15 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
     "lint:fix": "yarn lint --fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:ci": "cross-env CI=1 jest",
+    "test": "jest --testPathPattern src/__tests__/**",
+    "test:coverage": "yarn test --coverage",
+    "test:watch": "yarn test:coverage --watch",
+    "test:ci": "cross-env CI=1 yarn test",
     "deploy": "cd demo && yarn install && yarn build && gh-pages -d demo/build",
     "storybook": "sb dev -p 6006",
     "storybook:build": "sb build",
     "storybook:test": "test-storybook",
-    "storybook:test:coverage": "yarn storybook:test --coverage",
+    "storybook:test:coverage": "yarn storybook:test --coverage ",
     "storybook:test:cross-browser": "yarn storybook:test --browsers chromium firefox webkit",
     "storybook:test:ci": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
     "prepare": "husky install",
@@ -133,7 +134,6 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-sourcemaps": "^0.6.3",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.34.1",
     "sass-loader": "^13.1.0",
     "storybook": "^7.0.0-alpha.48",
     "style-loader": "^3.3.1",
@@ -141,7 +141,9 @@
     "typedoc": "^0.23.20",
     "typescript": "^4.8.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "remount": "^1.0.0"
+  },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"

@@ -3,6 +3,7 @@ dist
 src/__tests__
 **/*.test.tsx
 **/*.spec.tsx
+**/*.stories.tsx
 examples
 docs
 demo

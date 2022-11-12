@@ -10,10 +10,11 @@ import sourceMaps from 'rollup-plugin-sourcemaps';
 import filesize from 'rollup-plugin-filesize';
 import license from 'rollup-plugin-license';
 import { createRequire } from 'module';
+
 const require = createRequire(import.meta.url);
 const pkg = require('./package.json');
-
 const input = './src/index.tsx';
+const sourcemap = false;
 const banner = `
 /** @license Docco ${pkg.version}
  *
@@ -24,19 +25,18 @@ const banner = `
  */`;
 const globals = {
   react: 'React',
-  'react-dom': 'ReactDOM',
+  'react-dom/client': 'ReactDOM',
 };
 const plugins = [
-  externals(),
-  postcss({
-    modules: true,
-  }),
+  postcss(),
   replace({
     preventAssignment: true,
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
   }),
   json(),
-  typescript({ tsconfig: './tsconfig.json' }),
+  typescript({
+    tsconfig: './tsconfig.json',
+  }),
   resolve(),
   commonjs(),
   sourceMaps(),
@@ -47,42 +47,54 @@ const plugins = [
   license({ banner }),
 ];
 
-export default {
-  input,
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'auto',
-      plugins: [terser()],
+export default [
+  {
+    input,
+    output: [
+      {
+        file: pkg.main,
+        format: 'cjs',
+        sourcemap,
+        exports: 'auto',
+        plugins: [terser()],
+      },
+      {
+        file: pkg.module,
+        format: 'esm',
+        sourcemap,
+        exports: 'auto',
+        plugins: [terser()],
+      },
+      {
+        file: pkg.browser,
+        format: 'umd',
+        sourcemap,
+        exports: 'auto',
+        name: 'Docco',
+        plugins: [terser()],
+        globals,
+      },
+      {
+        file: 'dist/docco.js',
+        format: 'cjs',
+        sourcemap,
+        exports: 'auto',
+      },
+    ],
+    watch: {
+      include: 'src/**',
     },
-    {
-      file: pkg.module,
-      format: 'esm',
-      sourcemap: true,
-      exports: 'auto',
-      plugins: [terser()],
-    },
-    {
-      file: pkg.browser,
+    plugins: [externals({ exclude: 'remount' }), ...plugins],
+  },
+  {
+    input,
+    output: {
+      file: pkg.standalone,
       format: 'umd',
-      sourcemap: true,
-      exports: 'auto',
+      sourcemap,
       name: 'Docco',
       plugins: [terser()],
-      // globals,
     },
-    {
-      file: 'dist/index.js',
-      format: 'cjs',
-      sourcemap: true,
-      exports: 'auto',
-    },
-  ],
-  watch: {
-    include: 'src/**',
+    plugins,
   },
-  // globals,
-  plugins,
-};
+];

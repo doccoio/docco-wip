@@ -71,6 +71,9 @@ bower_components
 build/Release
 dist/
 
+# Docs generated
+docs/
+
 # Dependency directories
 node_modules/
 jspm_packages/

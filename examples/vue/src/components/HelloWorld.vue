@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import * as Docco from "@docco/docco-test";
+import * as Docco from "@docco/docco-wip";
 
 export default {
   name: "HelloWorld",
@@ -96,7 +96,7 @@ export default {
     msg: String,
   },
   mounted() {
-    Docco.init({ spec: "a" }, this.$refs["docs"]);
+    Docco.init({ spec: "https://aaa" }, this.$refs["docs"]);
   },
 };
 </script>
