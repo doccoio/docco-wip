@@ -13,6 +13,9 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v3
+      with:
+        # we actually need "github.event.pull_request.commits + 1" commit
+        fetch-depth: 0
     - uses: actions/setup-node@v3
       with:
         node-version: 16
@@ -21,4 +24,4 @@ runs:
       run: |
         yarn add @commitlint/cli
         FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
-        yarn commitlint --to $FIRST_COMMIT_SHA
+        yarn commitlint --from $FIRST_COMMIT_SHA --to $FIRST_COMMIT_SHA
