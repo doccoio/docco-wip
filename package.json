@@ -54,7 +54,7 @@
     "deploy": "cd demo && yarn install && yarn build && gh-pages -d demo/build",
     "storybook": "sb dev -p 6006",
     "storybook:build": "sb build",
-    "storybook:test": "test-storybook --testPathPattern tests/e2e/**/*.test.ts",
+    "storybook:test": "test-storybook",
     "storybook:test:coverage": "yarn storybook:test --coverage ",
     "storybook:test:cross-browser": "yarn storybook:test --browsers chromium firefox webkit",
     "storybook:test:ci": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
