@@ -58,4 +58,5 @@ jobs:
       - run: |
           FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
           echo $FIRST_COMMIT_SHA
+          echo $(git rev-list ^main examples-fix | tail -n 1)
           npx commitlint --from $FIRST_COMMIT_SHA --to $FIRST_COMMIT_SHA
