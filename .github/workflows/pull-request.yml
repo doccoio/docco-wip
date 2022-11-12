@@ -55,5 +55,6 @@ jobs:
       - uses: actions/setup-node@v2.1.0
       # or just "yarn" if you depend on "@commitlint/cli" already
       - run: yarn add @commitlint/cli
-      - run: FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
+      - run: |
+          FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
       - run: echo $FIRST_COMMIT_SHA
