@@ -12,4 +12,5 @@ runs:
     - shell: bash
       run: |
         yarn install
+        yarn add gh-pages
         cd demo && yarn install && yarn build && gh-pages -d demo/build
