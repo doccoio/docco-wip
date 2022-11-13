@@ -38,11 +38,10 @@
   "scripts": {
     "start": "yarn storybook",
     "watch": "rollup --config --watch",
-    "build": "yarn clean && tsc && rollup --config && yarn docs",
-    "clean": "rimraf dist && rimraf docs",
+    "build": "yarn clean && tsc && rollup --config",
+    "clean": "rimraf dist",
     "commit": "git-cz",
     "reinstall": "yarn clean && yarn install",
-    "docs": "typedoc",
     "coverage": "codecov -e TRAVIS_NODE_VERSION -f coverage/*.json",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
     "lint:fix": "yarn lint --fix",
@@ -51,16 +50,13 @@
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test:coverage --watch",
     "test:ci": "cross-env CI=1 yarn test",
-    "deploy": "cd demo && yarn install && yarn build && gh-pages -d demo/build",
     "storybook": "sb dev -p 6006",
     "storybook:build": "sb build",
     "storybook:test": "test-storybook",
     "storybook:test:coverage": "yarn storybook:test --coverage ",
     "storybook:test:cross-browser": "yarn storybook:test --browsers chromium firefox webkit",
-    "storybook:test:ci": "yarn concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn storybook:build --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn storybook:test:cross-browser\"",
     "prepare": "husky install",
-    "build-storybook": "storybook build",
-    "release": "release-it"
+    "build-storybook": "storybook build"
   },
   "engines": {
     "node": ">=12"

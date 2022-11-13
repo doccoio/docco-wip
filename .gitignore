@@ -73,6 +73,7 @@ dist/
 
 # Docs generated
 docs/
+!.github/actions/docs
 
 # Dependency directories
 node_modules/
