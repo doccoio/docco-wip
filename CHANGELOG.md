@@ -1,4 +1,23 @@
+## [1.2.0](https://github.com/doccoio/docco-wip/compare/1.1.0...v1.2.0) (2022-11-13)
 
+
+### Features
+
+* add dependency review ([d55a7d6](https://github.com/doccoio/docco-wip/commit/d55a7d6fd2a7b67f7e5f413dfcf2b7cd2a03942a))
+* add standalone ([1690ec7](https://github.com/doccoio/docco-wip/commit/1690ec75a02c0f340f0995c839aa59f7a6681327))
+* add wc and standalone examples ([821334c](https://github.com/doccoio/docco-wip/commit/821334ceb1a9aab9f391e291ef07066fc9a11b40))
+* codeql code scanning ([460f748](https://github.com/doccoio/docco-wip/commit/460f7483a431c3a9ed0796bffac5a1f53b456141))
+* test commit ([bc778a6](https://github.com/doccoio/docco-wip/commit/bc778a629ec8629a5cdc8679cf10852ff067e98f))
+
+
+### Bug Fixes
+
+* add test runner config for storybook e2e test ([df65239](https://github.com/doccoio/docco-wip/commit/df652398c50871e8c285aea7a619d68a9d8e0398))
+* gh lint action ([31f1b1a](https://github.com/doccoio/docco-wip/commit/31f1b1aea9a7151cfa594784dc3a7fc988c2413f))
+* merge branch 'main' into examples-fix ([ccdca6b](https://github.com/doccoio/docco-wip/commit/ccdca6b676de439485a35062bbb75232f0913475))
+* move stories test to e2e folder, add custom runner and gh action ([300c119](https://github.com/doccoio/docco-wip/commit/300c11915e9f39e973831488c42efcb5dd03b4fc))
+* update test pattern ([8671053](https://github.com/doccoio/docco-wip/commit/86710536ef4b67b4b9555faf85b7a498674babe1))
+* update test pattern ([99e7ac0](https://github.com/doccoio/docco-wip/commit/99e7ac061513a19adf6242073afbbf6310b5ed2d))
 
 ## [1.1.1](https://github.com/doccoio/docco-wip/compare/1.1.0...1.1.1) (2022-11-10)
 
