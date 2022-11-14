@@ -7,6 +7,7 @@ runs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        ref: ${{ github.head_ref }}
     - uses: actions/setup-node@v3
       with:
         node-version: 16
@@ -17,5 +18,5 @@ runs:
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
         yarn install
-        git add . && git commit -m "fix: install dependencies" || echo "Nothing to commit"
-        yarn release-it --npm.publishArgs="--registry=https://registry.npmjs.org" --npm.skipChecks
+        git status && git add . && git commit -m "fix: install dependencies" || echo "Nothing to commit"
+        yarn release-it
