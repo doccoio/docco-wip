@@ -1,5 +1,19 @@
 
 
+## [1.3.0](https://github.com/doccoio/docco-wip/compare/1.2.0...1.3.0) (2022-11-14)
+
+
+### Features
+
+* improve dependencies ([74d6ad1](https://github.com/doccoio/docco-wip/commit/74d6ad122139232c192aac6d92531e8592ecc401))
+
+
+### Bug Fixes
+
+* don't fail if there is nothing to commit ([4b95a42](https://github.com/doccoio/docco-wip/commit/4b95a42e32f5b608b81527486858cd26cc32d1b5))
+* ignore nprmrc ([240cc7b](https://github.com/doccoio/docco-wip/commit/240cc7b90779f062b1b6c94266e09c25aea0407b))
+* updating readme ([2024de0](https://github.com/doccoio/docco-wip/commit/2024de0996392dff67bfb90527b0c310e0b8d585))
+
 ## [1.2.0](https://github.com/doccoio/docco-wip/compare/1.1.1...1.2.0) (2022-11-14)
 
 
