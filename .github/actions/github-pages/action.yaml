@@ -11,6 +11,4 @@ runs:
         cache: 'yarn'
     - shell: bash
       run: |
-        yarn install
-        yarn add gh-pages
-        cd demo && yarn install && yarn build && gh-pages -d demo/build
+        cd demo && yarn add gh-pages && yarn install && yarn build && gh-pages -d demo/build
