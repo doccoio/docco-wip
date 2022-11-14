@@ -1,5 +1,18 @@
 
 
+## [1.3.1](https://github.com/doccoio/docco-wip/compare/1.3.0...1.3.1) (2022-11-14)
+
+
+### Bug Fixes
+
+* add test runner inside storybook folder ([cc3355e](https://github.com/doccoio/docco-wip/commit/cc3355e26ea50e02101c97d05fb3a0bfb0573cba))
+* install dependencies ([e28175f](https://github.com/doccoio/docco-wip/commit/e28175fe35600548cd39680a6a554a982d1f3f9c))
+* put pipeline back to where it was ([035be6d](https://github.com/doccoio/docco-wip/commit/035be6d0decdcab4642985d8a4d240e05071eea8))
+* remove commented lines, test push without extra args ([2e972fc](https://github.com/doccoio/docco-wip/commit/2e972fce397517e53ef7dff60992723d16a987f5))
+* test with args ([a15103d](https://github.com/doccoio/docco-wip/commit/a15103d3a6598b90cdc61c1fbf433d3049b41989))
+* test with args ([dbf5156](https://github.com/doccoio/docco-wip/commit/dbf5156b9cd6303a4cc9c4b49e71d2d722be5c0f))
+* update PR based on comments ([b07447b](https://github.com/doccoio/docco-wip/commit/b07447be6bff43d71d06ac0d4de73b8e640bd88f))
+
 ## [1.3.0](https://github.com/doccoio/docco-wip/compare/1.2.0...1.3.0) (2022-11-14)
 
 
