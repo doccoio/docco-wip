@@ -16,4 +16,5 @@ runs:
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         yarn install
+        git add . && git commit -m "fix: install dependencies"
         yarn release-it --npm.publishArgs="--registry=https://registry.npmjs.org" --npm.skipChecks
