@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Remount from 'remount';
-
 import Title from './components/title';
 import './styles.css';
 
