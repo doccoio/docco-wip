@@ -17,5 +17,5 @@ runs:
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
         yarn install
-        git add . && git commit -m "fix: install dependencies"
+        git add . && git commit -m "fix: install dependencies" || echo "Nothing to commit"
         yarn release-it --npm.publishArgs="--registry=https://registry.npmjs.org" --npm.skipChecks
