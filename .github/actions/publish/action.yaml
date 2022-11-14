@@ -16,4 +16,4 @@ runs:
         git config user.name "${GITHUB_ACTOR}"
         git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
         yarn install
-        yarn release-it
+        yarn release-it --npm.publishArgs="--registry=https://registry.npmjs.org" --npm.skipChecks
