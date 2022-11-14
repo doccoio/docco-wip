@@ -11,5 +11,5 @@ runs:
         cache: 'yarn'
     - shell: bash
       run: |
-        yarn add typedoc
-        yarn typedoc
+        yarn install
+        yarn docs

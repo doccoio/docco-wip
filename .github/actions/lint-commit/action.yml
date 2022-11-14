@@ -22,6 +22,6 @@ runs:
         cache: 'yarn'
     - shell: bash
       run: |
-        yarn add @commitlint/cli
+        yarn install
         FIRST_COMMIT_SHA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" ${{ github.event.pull_request.commits_url }} | jq -r '.[0].sha')
         yarn commitlint --from $FIRST_COMMIT_SHA --to $FIRST_COMMIT_SHA

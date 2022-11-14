@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-commit-lint:
-    name: Commit lint
+    name: Lint commit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
@@ -15,14 +15,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   run-lint:
-    name: Check Lint
+    name: Lint code
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: ./.github/actions/lint
       
   run-unit-test:
-    name: Run Unit Test
+    name: Unit test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
@@ -37,7 +37,7 @@ jobs:
       - uses: ./.github/actions/build
       
   run-interaction-test:
-    name: Run Interaction Test
+    name: Interaction test
     needs: [build]
     runs-on: ubuntu-latest
     steps:
