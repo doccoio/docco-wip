@@ -4,16 +4,14 @@ on:
   push:
     tags:
       - 'v*'
-    branches:
-      - feature/tag-release
 
 jobs:
-  # build:
-  #   name: Build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-  #     - uses: ./.github/actions/build
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: ./.github/actions/build
   # publish-docs:
   #   name: Documentation
   #   needs: [build]
@@ -34,6 +32,7 @@ jobs:
   #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   publish-npm-package:
     name: Publish NPM
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
