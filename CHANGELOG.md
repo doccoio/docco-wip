@@ -1,5 +1,12 @@
 
 
+## [1.5.1](https://github.com/doccoio/docco-wip/compare/1.5.0...1.5.1) (2022-11-15)
+
+
+### Documentation
+
+* **index.tsx:** update comment ([#16](https://github.com/doccoio/docco-wip/issues/16)) ([346a8a0](https://github.com/doccoio/docco-wip/commit/346a8a0a06ebae0b60606711cbba5280935eb809))
+
 ## [1.5.0](https://github.com/doccoio/docco-wip/compare/1.3.1...1.5.0) (2022-11-15)
 
 
