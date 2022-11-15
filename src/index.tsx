@@ -9,7 +9,6 @@ export interface Props {
   theme?: 'light' | 'dark';
 }
 
-// Docco
 export function Docco({ url, theme = 'light' }: Props) {
   return (
     <div className={`container container--${theme}`}>
