@@ -1,14 +1,13 @@
-name: Push Tag to NPM
+name: Workflow that will publish our module based on release-it config
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 jobs:
-  publish-npm-package:
-    name: Publish NPM
+  release-it:
+    name: Release based on release-it configuration
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: ./.github/actions/publish
