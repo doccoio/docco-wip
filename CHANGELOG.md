@@ -1,5 +1,23 @@
 
 
+## [1.5.0](https://github.com/doccoio/docco-wip/compare/1.3.1...1.5.0) (2022-11-15)
+
+
+### Features
+
+* add dependency review ([d55a7d6](https://github.com/doccoio/docco-wip/commit/d55a7d6fd2a7b67f7e5f413dfcf2b7cd2a03942a))
+* codeql code scanning ([460f748](https://github.com/doccoio/docco-wip/commit/460f7483a431c3a9ed0796bffac5a1f53b456141))
+* test commit ([bc778a6](https://github.com/doccoio/docco-wip/commit/bc778a629ec8629a5cdc8679cf10852ff067e98f))
+
+
+### Bug Fixes
+
+* docco wip ([619faeb](https://github.com/doccoio/docco-wip/commit/619faebc3d0fa460718ea3246391891670e6fd9b))
+* finalize pipeline ([7510188](https://github.com/doccoio/docco-wip/commit/7510188828fd53ff6996a9f8b41f5b9aee93f4ad))
+* finalize pipeline ([4fbc621](https://github.com/doccoio/docco-wip/commit/4fbc6217c9723cb66a791687dd307777d5821239))
+* improve comments and test workflow ([92d56a3](https://github.com/doccoio/docco-wip/commit/92d56a3842a06d3cbc02f0819a8d6889460624ee))
+* update name to more verbose ([f311bb9](https://github.com/doccoio/docco-wip/commit/f311bb9dad7d9707ffadb5e4d734d6c07cf83597))
+
 ## [1.4.0](https://github.com/doccoio/docco-wip/compare/1.3.1...1.4.0) (2022-11-15)
 
 
