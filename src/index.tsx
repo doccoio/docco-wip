@@ -19,6 +19,7 @@ export function Docco({ url, theme = 'light' }: Props) {
   );
 }
 
+// Export function init
 export function init(url: string, element: HTMLElement) {
   const root = ReactDOM.createRoot(element);
   root.render(Docco({ url }));
