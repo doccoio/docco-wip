@@ -1,15 +1,14 @@
 name: "Lint PR"
 
 on:
-  pull_request_target:
+  pull_request:
     types:
-      - opened
-      - edited
-      - synchronize
+      - closed
 
 jobs:
   run-lint-pr:
     name: Lint PR title 📝
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
