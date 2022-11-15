@@ -1,5 +1,5 @@
-name: 'Publish to NPM'
-description: Github action to publish to NPM
+name: Action that will publish our module based on release-it config
+description: Github action to release Docco
 
 runs:
   using: composite
