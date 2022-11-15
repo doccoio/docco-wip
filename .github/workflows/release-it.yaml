@@ -1,11 +1,11 @@
-name: Workflow that will release our module based on release-it config
+name: Release-it
 
 on:
   workflow_dispatch:
 
 jobs:
   release-it:
-    name: Release based on release-it configuration
+    name: Release-it ✨
     runs-on: ubuntu-latest
     environment: production
     steps:
